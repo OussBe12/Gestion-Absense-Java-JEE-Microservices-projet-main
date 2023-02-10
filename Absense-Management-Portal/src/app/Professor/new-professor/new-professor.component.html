@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">New professor</div>
+    <div class="card-body">
+      <form [formGroup]="newProfFormgroup" (ngSubmit)="handleSaveProfessor()">
+        <div class="mb-3">
+          <label class="form-label">Name :</label>
+          <input type="text" formControlName="name" class="form-control">
+          <span class="text-danger"
+                *ngIf="newProfFormgroup.controls['name'].touched
+                && newProfFormgroup.controls['name'].errors
+                && newProfFormgroup.controls['name'].errors!['required']">
+            Professor name is Required
+          </span>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email :</label>
+          <input type="text" formControlName="email" class="form-control">
+          <span class="text-danger"
+                *ngIf="newProfFormgroup.controls['email'].touched
+                && newProfFormgroup.controls['email'].errors
+                && newProfFormgroup.controls['email'].errors!['required']">
+            Email is Required
+          </span>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Speciality :</label>
+          <input type="text" formControlName="Speciality" class="form-control">
+          <span class="text-danger"
+                *ngIf="newProfFormgroup.controls['Speciality'].touched
+                && newProfFormgroup.controls['Speciality'].errors
+                && newProfFormgroup.controls['Speciality'].errors!['required']">
+            Speciality is Required
+          </span>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Phone Number :</label>
+          <input type="text" formControlName="Phone" class="form-control">
+          <span class="text-danger"
+                *ngIf="newProfFormgroup.controls['Phone'].touched
+                && newProfFormgroup.controls['Phone'].errors
+                && newProfFormgroup.controls['Phone'].errors!['required']">
+            Phone number is Required
+          </span>
+        </div>
+        <div class="mb-3 form-group">
+          <label class="form-label">Cours :</label>
+          <select multiple class="form-control" formControlName="cours">
+            <option *ngFor="let c of cours">{{c.name}}</option>
+          </select>
+        </div>
+        <button [disabled]="!newProfFormgroup.valid" class="btn btn-info">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+

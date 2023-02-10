@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">New professor</div>
+    <div class="card-body">
+      <form [formGroup]="newClassroomFormgroup" (ngSubmit)="handleSaveClassroom()">
+        <div class="mb-3">
+          <label class="form-label">Name :</label>
+          <input type="text" formControlName="fullName" class="form-control">
+          <span class="text-danger"
+                *ngIf="newClassroomFormgroup.controls['fullName'].touched
+                && newClassroomFormgroup.controls['fullName'].errors
+                && newClassroomFormgroup.controls['fullName'].errors!['required']">
+            Group name is Required
+          </span>
+        </div>
+        <button [disabled]="!newClassroomFormgroup.valid" class="btn btn-info">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+

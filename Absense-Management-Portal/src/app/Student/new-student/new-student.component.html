@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="card col-md-6 offset-3 mt-2">
+    <div class="card-header">New professor</div>
+    <div class="card-body">
+      <form [formGroup]="newStudentFormgroup" (ngSubmit)="handleSaveStudent()">
+        <div class="mb-3">
+          <label class="form-label">Name :</label>
+          <input type="text" formControlName="fullName" class="form-control">
+          <span class="text-danger"
+                *ngIf="newStudentFormgroup.controls['fullName'].touched
+                && newStudentFormgroup.controls['fullName'].errors
+                && newStudentFormgroup.controls['fullName'].errors!['required']">
+            Student name is Required
+          </span>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">birthDate :</label>
+          <input type="date" formControlName="birthDate" class="form-control">
+          <span class="text-danger"
+                *ngIf="newStudentFormgroup.controls['birthDate'].touched
+                && newStudentFormgroup.controls['birthDate'].errors
+                && newStudentFormgroup.controls['birthDate'].errors!['required']">
+            Birth Date is Required
+          </span>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">gender :</label>
+          <input type="text" formControlName="gender" class="form-control">
+          <span class="text-danger"
+                *ngIf="newStudentFormgroup.controls['gender'].touched
+                && newStudentFormgroup.controls['gender'].errors
+                && newStudentFormgroup.controls['gender'].errors!['required']">
+            Gender is Required
+          </span>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Address :</label>
+          <input type="text" formControlName="Phone" class="form-control">
+          <span class="text-danger"
+                *ngIf="newStudentFormgroup.controls['address'].touched
+                && newStudentFormgroup.controls['address'].errors
+                && newStudentFormgroup.controls['address'].errors!['required']">
+            Address is Required
+          </span>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">CIN :</label>
+          <input type="text" formControlName="cin" class="form-control">
+          <span class="text-danger"
+                *ngIf="newStudentFormgroup.controls['cin'].touched
+                && newStudentFormgroup.controls['cin'].errors
+                && newStudentFormgroup.controls['cin'].errors!['required']">
+            CIN is Required
+          </span>
+        </div>
+        <div class="mb-3 form-group">
+          <label class="form-label">Classroom :</label>
+          <select multiple class="form-control" formControlName="Classroom">
+            <option *ngFor="let c of classroom">{{c.name}}</option>
+          </select>
+        </div>
+
+        <button [disabled]="!newStudentFormgroup.valid" class="btn btn-info">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+

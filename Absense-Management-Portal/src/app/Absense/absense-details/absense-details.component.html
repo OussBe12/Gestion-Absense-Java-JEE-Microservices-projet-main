@@ -1,0 +1,105 @@
+<div class="container mt-2">
+  <ng-container *ngIf="absense" >
+    <div class="card" *ngIf="absense">
+      <div class="card-header">Absense details</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Professor</th>
+            <th>Student</th>
+            <th>Group</th>
+            <th>Cours</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{absense.id}}</td>
+            <td>{{absense.professor.name}}</td>
+            <td>{{absense.student.fullName}}</td>
+            <td>{{absense.classroom.name}}</td>
+            <td>{{absense.cours.name}}</td>
+            <td></td>
+            <td>
+              <button  class="btn btn-danger" (click)="handelDeleteAbsense(absense.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Student Details</h5>
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>fullName</th>
+                    <th>birthDate</th>
+                    <th>gender</th>
+                    <th>address</th>
+                    <th>cin</th>
+                    <th>classroom</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>{{absense.student.id}}</td>
+                    <td>{{absense.student.fullName}}</td>
+                    <td>{{absense.student.birthDate}}</td>
+                    <td>{{absense.student.gender}}</td>
+                    <td>{{absense.student.address}}</td>
+                    <td>{{absense.student.cin}}</td>
+                    <td>{{absense.classroom.name}}</td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Cours details</h5>
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Duration</th>
+                    <th>Date</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>{{absense.cours.id}}</td>
+                    <td>{{absense.cours.name}}</td>
+                    <td>{{absense.cours.duration}}</td>
+                    <td>{{absense.cours.starterDate}}</td>
+
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLading >
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading ............
+    </ng-template>
+  </ng-template>
+</div>

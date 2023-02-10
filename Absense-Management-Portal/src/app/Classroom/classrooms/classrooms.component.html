@@ -1,0 +1,46 @@
+<div class="container mt-2">
+  <nav class="p-2 m-2 border ">
+    <button class="btn btn btn-outline-dark" (click)="handelAddClassroom()">Add Classroom</button>
+  </nav>
+  <ng-container *ngIf="classrooms" >
+    <div class="card" *ngIf="classrooms">
+      <div class="card-header">Classrooms</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let C of classrooms">
+            <td>{{C.id}}</td>
+            <td>{{C.name}}</td>
+            <td>
+              <button class="btn btn-success" (click)="handelClassroomDetails(C.id)">
+                Details
+              </button>
+            </td>
+            <td>
+              <button  class="btn btn-danger" (click)="handelDeleteClassroom(C.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLading >
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading ............
+    </ng-template>
+  </ng-template>
+</div>

@@ -1,0 +1,49 @@
+<div class="container mt-2">
+  <ng-container *ngIf="absenses" >
+    <div class="card" *ngIf="absenses">
+      <div class="card-header">Absenses</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Professor</th>
+            <th>Student</th>
+            <th>Group</th>
+            <th>Cours</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let A of absenses">
+            <td>{{A.id}}</td>
+            <td>{{A.professorId}}</td>
+            <td>{{A.studentId}}</td>
+            <td>{{A.classroomId}}</td>
+            <td>{{A.coursId}}</td>
+            <td>
+              <button class="btn btn-success" (click)="handelAbsenseDetails(A.id)">
+                Details
+              </button>
+            </td>
+            <td>
+              <button  class="btn btn-danger" (click)="handelDeleteAbsense(A.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLading >
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading ............
+    </ng-template>
+  </ng-template>
+</div>

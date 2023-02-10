@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Absence-Service/Absence-Service.iml" filepath="$PROJECT_DIR$/Absence-Service/Absence-Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Discovery-Service/Discovery-Service.iml" filepath="$PROJECT_DIR$/Discovery-Service/Discovery-Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Gateway-Service/Gateway-Service.iml" filepath="$PROJECT_DIR$/Gateway-Service/Gateway-Service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Gestion-Absense-Java-JEE-Microservices-projet.iml" filepath="$PROJECT_DIR$/.idea/Gestion-Absense-Java-JEE-Microservices-projet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cours-service/cours-service.iml" filepath="$PROJECT_DIR$/cours-service/cours-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/professor-service/professor-service.iml" filepath="$PROJECT_DIR$/professor-service/professor-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/student-service/student-service.iml" filepath="$PROJECT_DIR$/student-service/student-service.iml" />
+    </modules>
+  </component>
+</project>

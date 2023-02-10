@@ -1,0 +1,72 @@
+<div class="container mt-2">
+  <nav class="p-2 m-2 border ">
+    <button class="btn btn btn-outline-dark" (click)="handelAddClassroom()">Add Classroom</button>
+  </nav>
+  <ng-container *ngIf="classroom" >
+    <div class="card" *ngIf="classroom">
+      <div class="card-header">Classrooms</div>
+      <div class="card-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{classroom.id}}</td>
+            <td>{{classroom.name}}</td>
+            <td>
+              <button class="btn btn-success" (click)="handelClassroomDetails(classroom.id)">
+                Update
+              </button>
+            </td>
+            <td>
+              <button  class="btn btn-danger" (click)="handelDeleteClassroom(classroom.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>fullName</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let S of students">
+            <td>{{S.id}}</td>
+            <td>{{S.fullName}}</td>
+            <td>
+              <button class="btn btn-success" >
+                Details
+              </button>
+            </td>
+            <td>
+              <button  class="btn btn-danger" >
+                Delete
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>>
+
+      </div>
+    </div>
+
+  </ng-container>
+  <ng-template #failureOrLading >
+    <ng-container *ngIf="errorMessage; else loading">
+      <div class="text-danger">
+        {{errorMessage}}
+      </div>
+    </ng-container>
+    <ng-template #loading>
+      Loading ............
+    </ng-template>
+  </ng-template>
+</div>
